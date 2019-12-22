@@ -1,5 +1,6 @@
 import React from 'react';
-import { MDBDataTable } from 'mdbreact';
+import { MDBDataTable, MDBView } from 'mdbreact';
+import Avatar from 'react-avatar';
 
 const tableCard = () => {
     const data = {
@@ -252,7 +253,14 @@ const tableCard = () => {
             }
         ]
     };
-
+    data.rows.map(r => {
+        const name = <MDBView>
+            <Avatar size="25" round={true} name={r.name} />
+            {r.name}
+        </MDBView>
+        r.name = name
+        return r
+    })
     return (
         <MDBDataTable
             // striped

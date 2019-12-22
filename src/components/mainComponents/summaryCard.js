@@ -12,7 +12,6 @@ const SummaryDiv = styled.div`
 
 const summaryCard = (props) => {
     const order = { ...props.order }
-    console.log(order)
     const orderKeys = Object.keys(order)
     let title = orderKeys.map((key, index) => {
         return (

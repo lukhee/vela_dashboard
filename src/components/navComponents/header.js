@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Form, Image } from 'react-bootstrap'
+import { Container, Row, Col, Badge, Image, InputGroup, FormControl } from 'react-bootstrap'
 import styled from 'styled-components'
 
 // const ConDiv = styled.div`
@@ -36,7 +36,7 @@ const NameUl = styled.ul`
     display: flex;
 `
 
-const header = () => {
+const header = (props) => {
     return (
         <Row style={{ padding: "10px", border: "1px solid:silver", boxShadow: "0px 4px 10px rgba(79, 79, 79, 0.07)", zIndex: "200", background: "white", position: "fixed", top: "0", right: "0", left: "0" }}>
             <Col sm={2}>
@@ -46,13 +46,20 @@ const header = () => {
                 <Container>
                     <Row>
                         <Col sm={7} style={{ margin: "auto" }}>
-                            <Form.Control style={{ border: "none", borderRadius: "0" }} size="sm" type="text" placeholder="Search ..." />
+                            <InputGroup size="sm" >
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text id="inputGroup-sizing-sm" style={{ border: "none", background: "white" }}><i class="fa fa-search" aria-hidden="true"></i></InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <FormControl style={{ border: "none" }} aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="search ..." />
+                            </InputGroup>
                         </Col>
                         <Col sm={5}>
                             <UL className="list-unstyled">
                                 <li> Support </li>
                                 <li> FAQ </li>
-                                <li> Notice </li>
+                                <li> <i style={{ position: "relative" }} class="fa fa-bell-o" aria-hidden="true"><Badge style={{
+                                    position: "absolute", top: "-8px", left: "6px", color: "white", borderRadius: "15px"
+                                }} variant="primary">9</Badge></i></li>
                                 <li>
                                     <NameUl className="list-unstyled flex">
                                         <UserLi > Hello

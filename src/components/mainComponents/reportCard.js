@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Image } from 'react-bootstrap'
 
 const Card = styled.div`
     width: 23%;
@@ -12,8 +13,7 @@ const Card = styled.div`
 `
 
 const ReportGraph = styled.div`
-    background: linear-gradient(180deg, rgba(2, 148, 255, 0.126274) 33.13%, rgba(255, 255, 255, 0.0001) 117.06%);
-    padding: 10px
+    padding: 5px
     width: 30%;
 `
 
@@ -31,6 +31,7 @@ const reportCard = (props) => {
                 <ReportVAlue>{props.reportValue}</ReportVAlue>
             </div>
             <ReportGraph>
+                <Image src="graph1.png" />
             </ReportGraph>
         </Card>
     )

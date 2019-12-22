@@ -70,7 +70,7 @@ class MainBoard extends Component {
                     <DailyDiv style={{ marginTop: "10px" }}>
                         <GraphCard />
                         <div style={{
-                            width: "38%",
+                            width: "39%",
                             display: "flex",
                             flexDirection: "column"
                         }}>

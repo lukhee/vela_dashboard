@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-list a.chosen,
+.navbar-list a:hover {
+  border-bottom: 1px solid #F14B31;
+}
+
+tbody{
+  background-color: white !important;
+  border:none !important
+}
+
+table, td{
+  border:none !important;
+  border-bottom: 1px solid #CCCFD4 !important;
+  padding: 25px 15px !important;
+  font-family: 'Segoe UI' !important;
+  font-style: regular;
+  font-size: 14px;
+}
+
+th{
+  border:none !important;
+  padding: 10px !important;
+  font-family: 'Segoe UI' !important;
+  font-style: regular;
+  font-size: 14px;
+}
+
+thead{
+  border:none !important;
+  background-color: #EAEEF0 !important;
+  color: #7F8FA4 !important;
+}
+
+.pagination{
+  float: right !important;
+}
+
