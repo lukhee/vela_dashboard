@@ -1,3 +1,6 @@
+## `Hosted on Netlify with the link below`
+[vela_dashboard](https://festive-saha-c2ba7b.netlify.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
