@@ -13,9 +13,9 @@ const Homepage = () => {
             <div>
                 <Route exact path="/overview" component={MainBoard} />
                 <Switch>
-                    <Route path="/:id" exact component={OtherMainBoard} />
+                    <Route path="/dashboard/:id" exact component={OtherMainBoard} />
                     {/* <Route component={NoMatch} /> */}
-                    <Redirect from='/' to="/overview/" />
+                    <Redirect from='/' to="/overview" />
                 </Switch>
             </div>
         </div>

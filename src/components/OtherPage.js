@@ -18,6 +18,7 @@ const contentstyle = {
 }
 
 const OtherPage = (props)=> {
+    console.log(props)
     let Id = props.match.params.id
     return (
         <ConDiv>

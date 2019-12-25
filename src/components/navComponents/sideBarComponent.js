@@ -40,22 +40,22 @@ const sideBarComponent = () => {
                 <div style={{ paddingBottom: "15px", padding: '0' }}>
                     <ul className="list-unstyled sidebarLink">
                         <li> <span style={aStyle}>Payment</span></li>
-                        <li><NavLink to="/all-payment" style={aStyle} activeClassName="chosen"> <I className="fa fa-folder-open-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> All Payments</span></NavLink></li>
-                        <li> <NavLink to="/Reconcilled-Payments" style={aStyle} activeClassName="chosen"> <I className="fa fa-credit-card" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Reconcilled Payments </span></NavLink></li>
-                        <li><NavLink to="/UnReconcilled-Payments" style={aStyle} activeClassName="chosen"> <I className="fa fa-credit-card" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Un-Reconcilled Payments </span> </NavLink></li>
-                        <li><NavLink to="/Manual-Settlement" style={aStyle} activeClassName="chosen"> <I className="fa fa-dot-circle-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Manual Settlement</span></NavLink></li>
+                        <li><NavLink to="/dashboard/all-payment" style={aStyle} activeClassName="chosen"> <I className="fa fa-folder-open-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> All Payments</span></NavLink></li>
+                        <li> <NavLink to="/dashboard/Reconcilled-Payments" style={aStyle} activeClassName="chosen"> <I className="fa fa-credit-card" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Reconcilled Payments </span></NavLink></li>
+                        <li><NavLink to="/dashboard/UnReconcilled-Payments" style={aStyle} activeClassName="chosen"> <I className="fa fa-credit-card" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Un-Reconcilled Payments </span> </NavLink></li>
+                        <li><NavLink to="/dashboard/Manual-Settlement" style={aStyle} activeClassName="chosen"> <I className="fa fa-dot-circle-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Manual Settlement</span></NavLink></li>
                     </ul>
                 </div>
                 <div style={{ paddingBottom: "15px", padding: '0' }}>
                     <ul className="list-unstyled sidebarLink">
                         <li> <span style={aStyle}> Orders </span></li>
-                        <li> <NavLink to="/Pending-Orders" style={aStyle} activeClassName="chosen"><I className="fa fa-bookmark-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Pending Orders</span></NavLink></li>
-                        <li><NavLink to="/Reconcilled-Orders" style={aStyle} activeClassName="chosen"> <I className="fa fa-hand-lizard-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Reconcilled Orders </span> </NavLink></li>
+                        <li> <NavLink to="/dashboard/Pending-Orders" style={aStyle} activeClassName="chosen"><I className="fa fa-bookmark-o" aria-hidden="true"></I><span style={{ paddingLeft: "10px" }}> Pending Orders</span></NavLink></li>
+                        <li><NavLink to="/dashboard/Reconcilled-Orders" style={aStyle} activeClassName="chosen"> <I className="fa fa-hand-lizard-o" aria-hidden="true"></I><span style={{ paddingLeft: "5px" }}> Reconcilled Orders </span> </NavLink></li>
                     </ul>
                 </div>
                 <div style={{ paddingBottom: "15px", padding: '0' }}>
                     <ul className="list-unstyled sidebarLink">
-                        <li><NavLink to="/Merchant-Profile" style={aStyle} activeClassName="chosen"><I className="fa fa-user" aria-hidden="true"><span style={{ paddingLeft: "10px" }}> Merchant Profile </span></I></NavLink></li>
+                        <li><NavLink to="/dashboard/Merchant-Profile" style={aStyle} activeClassName="chosen"><I className="fa fa-user" aria-hidden="true"><span style={{ paddingLeft: "10px" }} > Merchant Profile </span></I></NavLink></li>
                     </ul>
                 </div>
             </div>
