@@ -26,8 +26,8 @@ const graphCard = () => {
                         </Form.Control>
                     </Form.Group>
                     <div style={{ display: "flex" }}>
-                        <span style={{ marginBottom: "0", marginTop: "3px" }}><i style={{ borderRadius: "4px", color: "#CCCFD4", background: '#cccfd433', marginLeft: '20px', border: '1px solid #CCCFD4', padding: "0 7px" }} class="fa fa-angle-left" aria-hidden="true"></i></span>
-                        <span style={{ marginBottom: "0", marginTop: "3px" }}><i style={{ borderRadius: "4px", color: "#CCCFD4", background: '#cccfd433', padding: "0 7px", marginLeft: '10px', border: '1px solid #CCCFD4' }} class="fa fa-angle-right" aria-hidden="true"></i></span>
+                        <span style={{ marginBottom: "0", marginTop: "3px" }}><i style={{ borderRadius: "4px", color: "#CCCFD4", background: '#cccfd433', marginLeft: '20px', border: '1px solid #CCCFD4', padding: "0 7px" }} className="fa fa-angle-left" aria-hidden="true"></i></span>
+                        <span style={{ marginBottom: "0", marginTop: "3px" }}><i style={{ borderRadius: "4px", color: "#CCCFD4", background: '#cccfd433', padding: "0 7px", marginLeft: '10px', border: '1px solid #CCCFD4' }} className="fa fa-angle-right" aria-hidden="true"></i></span>
                     </div>
                 </div>
             </HDiv>

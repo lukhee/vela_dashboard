@@ -3,11 +3,12 @@ import styled from 'styled-components'
 import { Image } from 'react-bootstrap'
 
 const Card = styled.div`
-    width: 23%;
+    width: 45%;
     background: white;
     text-align: left;
-    line-height: .8rem
-    padding: 10px
+    line-height: .8rem;
+    padding: 10px;
+    margin-right: 20px;
     display: flex;
     justify-content: space-between;
 `

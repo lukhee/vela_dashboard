@@ -12,9 +12,16 @@ code {
     monospace;
 }
 
-.navbar-list a.chosen,
-.navbar-list a:hover {
-  border-bottom: 1px solid #F14B31;
+.sidebarLink a.chosen{
+  background: #1875f021;
+  border-left: 3px solid #1875F0 !important;
+  border: 1px solid #1875F0;
+}
+
+.sidebarLink a:hover{
+  /* background: #f8f8fa; */
+  background: #1875f021;
+  box-shadow: 2px 2px 2px grey
 }
 
 tbody{

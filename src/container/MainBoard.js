@@ -27,21 +27,28 @@ const PaymentDiv = styled.div`
 
 class MainBoard extends Component {
     state = {
-        dailyReportData: [
-            {
-                descrip: "Daily Transaction Volume",
-                value: '2,342'
-            }, {
-                descrip: "Daily Transaction Value",
-                value: '#4,000,000'
-            }, {
+        dailyReportData: {
+            daily: [
+                {
+                    id: 2,
+                    descrip: "Daily Transaction Volume",
+                    value: '2,342'
+                }, {
+                    id: 3,
+                    descrip: "Daily Transaction Value",
+                    value: '#4,000,000'
+                },
+            ], 
+            total: [{
+                id: 4,
                 descrip: "Total Transaction Volume",
                 value: "452,000"
             }, {
+                id: 5,
                 descrip: "Total Transaction Value",
                 value: "#4,000,000"
-            }
-        ],
+            }]
+        },
         orderSummary: {
             "Pending Orders": 20,
             "Reconsilled Orders": 80,
@@ -54,9 +61,9 @@ class MainBoard extends Component {
         }
     }
     render() {
-        let DailyRecord = this.state.dailyReportData.map((ele, index) => {
+        let DailyRecord = this.state.dailyReportData.daily.map((ele, index) => {
             return (
-                <DailyReport key={index}
+                <DailyReport key={ele.id}
                     reportHeading={ele.descrip}
                     reportValue={ele.value}
                 />)
@@ -64,9 +71,14 @@ class MainBoard extends Component {
         return (
             <ConDiv>
                 <Container>
-                    <DailyDiv style={{ marginTop: "30px" }}>
-                        {DailyRecord}
-                    </DailyDiv>
+                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                        <div style={{ marginTop: "30px", width: "50%", display: "flex", justifyContent: "flex-start" }}>
+                            {DailyRecord}
+                        </div>
+                        <div style={{ marginTop: "30px", width: "50%", display: "flex", justifyContent: "flex-end" }}>
+                            {DailyRecord}
+                        </div>
+                    </div>
                     <DailyDiv style={{ marginTop: "10px" }}>
                         <GraphCard />
                         <div style={{
