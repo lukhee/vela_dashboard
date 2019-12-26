@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBDataTable, MDBView } from 'mdbreact';
+import { MDBDataTable, MDBView, MDBBtn } from 'mdbreact';
 import Avatar from 'react-avatar';
 
 const tableCard = () => {
@@ -46,10 +46,10 @@ const tableCard = () => {
             {
                 name: 'Tiger Nixon',
                 position: 'System Architect',
-                office: 'Edinburgh',
+                office: <MDBBtn color="default" className="btnTable" rounded size="sm">Button</MDBBtn>,
                 age: '61',
                 date: '2011/04/25',
-                salary: 'V'
+                salary: <button style={{background: "gold"}}>somethine</button>
             },
             {
                 name: 'Garrett Winters',

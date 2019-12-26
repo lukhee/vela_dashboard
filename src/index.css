@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+
 .sidebarLink a.chosen{
   background: #1875f021;
   border-left: 3px solid #1875F0 !important;
@@ -22,6 +23,30 @@ code {
   /* background: #f8f8fa; */
   background: #1875f021;
   box-shadow: 2px 2px 2px grey
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.card-header{
+  background: none !important
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #7F8FA4;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 12px;
+    box-sizing: border-box;
+    line-height: 36px;
+    font-weight: 500;
+    color: white;
+    -webkit-border-radius: 50%;
 }
 
 tbody{
