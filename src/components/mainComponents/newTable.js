@@ -277,14 +277,26 @@ const TablePage = (props) => {
         ]
     };
 
+    let rowCount = props.rowCount
+    let rows = data_panel.rows.filter((item, index) => {
+        if (index < rowCount) return true
+        return false
+    })
+    const changeLength = (event) => {
+        const len = event.target.value
+        console.log('lenght: ', len)
+        props.rowChange(len)
+    }
+
+
     return (
         <ConDiv>
             <MDBCardHeader className=" d-flex justify-content-between align-items-center py-2 mx-4 border-bottom-0" style={{ fontFamily: "Segoe UI !important", fontSize: "13px", lineHeight: "17px", textAlign: "left" }}>
                 <div style={{ width: "30%" }}>
-                    Showing <select style={{ background: "rgb(247, 247, 247)" }} className="mx-2 text-primary border-0 bg-none">
-                        <option>10</option>
-                        <option>20</option>
-                        <option>50</option>
+                    Showing <select style={{ background: "rgb(247, 247, 247)" }} className="mx-2 text-primary border-0 bg-none" onChange={changeLength} value={rowCount}>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
                     </select>
                     out of {data_panel.rows.length} payments
                     </div>
@@ -310,7 +322,7 @@ const TablePage = (props) => {
                 <MDBCardBody cascade className="text-left p-0">
                     <MDBTable btn fixed>
                         <MDBTableHead columns={data_panel.columns} />
-                        <MDBTableBody rows={data_panel.rows} />
+                        <MDBTableBody rows={rows} />
                     </MDBTable>
                 </MDBCardBody>
             </MDBCard>

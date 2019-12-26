@@ -1,274 +1,334 @@
 import React from 'react';
-import { MDBDataTable, MDBView, MDBBtn } from 'mdbreact';
-import Avatar from 'react-avatar';
+import styled from 'styled-components'
+import { InputGroup, FormControl, Container } from 'react-bootstrap'
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
-const tableCard = () => {
-    const data = {
+const ConDiv = styled.div`
+    background: #f8f8fa;
+    min-height: 100vh;
+    text-align: center;
+`
+
+const contentstyle = {
+    margin: "10px",
+    // background: "white",
+    minHeight: "80vh",
+    color: "red",
+    textTransform: "capitalize"
+}
+
+
+const TablePage = (props) => {
+    const data_panel = {
         columns: [
             {
-                label: 'Name',
-                field: 'name',
-                sort: 'asc',
-                width: 150
+                'label': 'Item Type',
+                'field': 'type',
+                'sort': 'asc'
             },
             {
-                label: 'Position',
-                field: 'position',
-                sort: 'asc',
-                width: 270
+                'label': 'Price',
+                'field': 'Price',
+                'sort': 'asc'
             },
             {
-                label: 'Office',
-                field: 'office',
-                sort: 'asc',
-                width: 200
+                'label': 'Transaction No',
+                'field': 'id',
+                'sort': 'asc'
             },
             {
-                label: 'Age',
-                field: 'age',
-                sort: 'asc',
-                width: 100
+                'label': 'Time',
+                'field': 'time',
+                'sort': 'asc'
             },
             {
-                label: 'Start date',
-                field: 'date',
-                sort: 'asc',
-                width: 150
+                'label': 'Status',
+                'field': 'status',
+                'sort': 'asc'
             },
-            {
-                label: '',
-                field: 'salary',
-                sort: 'asc',
-                width: 100
-            }
         ],
         rows: [
             {
-                name: 'Tiger Nixon',
-                position: 'System Architect',
-                office: <MDBBtn color="default" className="btnTable" rounded size="sm">Button</MDBBtn>,
-                age: '61',
-                date: '2011/04/25',
-                salary: <button style={{background: "gold"}}>somethine</button>
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Garrett Winters',
-                position: 'Accountant',
-                office: 'Tokyo',
-                age: '63',
-                date: '2011/07/25',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Ashton Cox',
-                position: 'Junior Technical Author',
-                office: 'San Francisco',
-                age: '66',
-                date: '2009/01/12',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Cedric Kelly',
-                position: 'Senior Javascript Developer',
-                office: 'Edinburgh',
-                age: '22',
-                date: '2012/03/29',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Airi Satou',
-                position: 'Accountant',
-                office: 'Tokyo',
-                age: '33',
-                date: '2008/11/28',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Brielle Williamson',
-                position: 'Integration Specialist',
-                office: 'New York',
-                age: '61',
-                date: '2012/12/02',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Herrod Chandler',
-                position: 'Sales Assistant',
-                office: 'San Francisco',
-                age: '59',
-                date: '2012/08/06',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Rhona Davidson',
-                position: 'Integration Specialist',
-                office: 'Tokyo',
-                age: '55',
-                date: '2010/10/14',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Colleen Hurst',
-                position: 'Javascript Developer',
-                office: 'San Francisco',
-                age: '39',
-                date: '2009/09/15',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Sonya Frost',
-                position: 'Software Engineer',
-                office: 'Edinburgh',
-                age: '23',
-                date: '2008/12/13',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Jena Gaines',
-                position: 'Office Manager',
-                office: 'London',
-                age: '30',
-                date: '2008/12/19',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Quinn Flynn',
-                position: 'Support Lead',
-                office: 'Edinburgh',
-                age: '22',
-                date: '2013/03/03',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Charde Marshall',
-                position: 'Regional Director',
-                office: 'San Francisco',
-                age: '36',
-                date: '2008/10/16',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Haley Kennedy',
-                position: 'Senior Marketing Designer',
-                office: 'London',
-                age: '43',
-                date: '2012/12/18',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Tatyana Fitzpatrick',
-                position: 'Regional Director',
-                office: 'London',
-                age: '19',
-                date: '2010/03/17',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Michael Silva',
-                position: 'Marketing Designer',
-                office: 'London',
-                age: '66',
-                date: '2012/11/27',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Paul Byrd',
-                position: 'Chief Financial Officer (CFO)',
-                office: 'New York',
-                age: '64',
-                date: '2010/06/09',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Gloria Little',
-                position: 'Systems Administrator',
-                office: 'New York',
-                age: '59',
-                date: '2009/04/10',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Bradley Greer',
-                position: 'Software Engineer',
-                office: 'London',
-                age: '41',
-                date: '2012/10/13',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Dai Rios',
-                position: 'Personnel Lead',
-                office: 'Edinburgh',
-                age: '35',
-                date: '2012/09/26',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Jenette Caldwell',
-                position: 'Development Lead',
-                office: 'New York',
-                age: '30',
-                date: '2011/09/03',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Yuri Berry',
-                position: 'Chief Marketing Officer (CMO)',
-                office: 'New York',
-                age: '40',
-                date: '2009/06/25',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Caesar Vance',
-                position: 'Pre-Sales Support',
-                office: 'New York',
-                age: '21',
-                date: '2011/12/12',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Doris Wilder',
-                position: 'Sales Assistant',
-                office: 'Sidney',
-                age: '23',
-                date: '2010/09/20',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Angelica Ramos',
-                position: 'Chief Executive Officer (CEO)',
-                office: 'London',
-                age: '47',
-                date: '2009/10/09',
-                salary: 'V'
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
             },
             {
-                name: 'Gavin Joyce',
-                position: 'Developer',
-                office: 'Edinburgh',
-                age: '42',
-                date: '2010/12/22',
-                salary: 'V'
-            }
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-success border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-muted border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Un-reconcilled </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
+            {
+                'type': <div><div className='avatar-circle'><span className='initials'>VW</span></div> Apple Mac Book 15 250 SSD 12GB </div>,
+                'price': '$73430',
+                'id': '124576789',
+                'time': '12:30',
+                'status': <div className="d-flex justify-content-between"><div className="p-1 px-2 rounded-pill w-75 text-warning border"> <i className="fa fa-circle mr-1" aria-hidden="true"></i>  Pending </div> <i className="fa fa-angle-down m-auto" aria-hidden="true"></i></div>,
+            },
         ]
     };
-    data.rows.map(r => {
-        const name = <MDBView>
-            <Avatar size="25" round={true} name={r.name} />
-            {r.name}
-        </MDBView>
-        r.name = name
-        return r
-    })
-    return (
-        <MDBDataTable
-            // striped
-            bordered
-            small
-            data={data}
-        />
-    );
-}
 
-export default tableCard;
+    let rowCount = props.rowCount || 10
+    let rows = data_panel.rows.filter((item, index) => {
+        if (index < rowCount) return true
+        return false
+    })
+    const changeLength = (event) => {
+        const len = event.target.value
+        console.log('lenght: ', len)
+        props.rowChange(len)
+    }
+
+
+    return (
+        <ConDiv>
+            <MDBCardHeader className=" d-flex justify-content-between align-items-center py-3 px-0 border-bottom-0" style={{ fontFamily: "Segoe UI !important", fontSize: "13px", lineHeight: "17px", textAlign: "left" }}>
+                <div style={{ width: "30%" }}>
+                    Showing <select style={{ background: "rgb(247, 247, 247)" }} className="mx-2 text-primary border-0 bg-none" onChange={changeLength} value={rowCount}>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                    out of {data_panel.rows.length} payments
+                    </div>
+                <div style={{ width: "40%" }}>
+                    <InputGroup size="sm" >
+                        <InputGroup.Prepend style={{ color: "#787878", fontSize: "11px" }}>
+                            <InputGroup.Text id="inputGroup-sizing-sm" style={{ border: "none", borderBottom: "0.5px solid #787878", borderRadius: "0px", background: "#f7f7f7" }}><i className="fa fa-search" aria-hidden="true"></i></InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl style={{ border: "none", borderBottom: "1px solid grey", borderRadius: "0px", background: "#f7f7f7" }} aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="search ..." />
+                    </InputGroup>
+                </div>
+                <div style={{ width: "30%", paddingLeft: "40px" }}>
+                    Show <select style={{ background: "#f7f7f7" }} className="ml-3 p-1 border">
+                        <option>All</option>
+                        <option>Reconcilled</option>
+                        <option>Un-Reconcilled</option>
+                        <option>Settled</option>
+                        <option>Un-Settled</option>
+                    </select>
+                </div>
+            </MDBCardHeader>
+            <Container>
+                <MDBCard narrow className=" border-0" style={{ contentstyle }}>
+                    <MDBCardBody cascade className="text-left p-0">
+                        <MDBTable btn fixed>
+                            <MDBTableHead columns={data_panel.columns} />
+                            <MDBTableBody rows={rows} />
+                        </MDBTable>
+                    </MDBCardBody>
+                </MDBCard>
+                <div className="d-flex justify-content-between align-items-end p-2"> <div>page number</div> <div> Pagination </div></div>
+            </Container>
+        </ConDiv>
+    );
+};
+
+export default TablePage;

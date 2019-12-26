@@ -22,7 +22,6 @@ const DailyDiv = styled.div`
 
 const PaymentDiv = styled.div`
     width: 100%;
-    margin-top: 20px;
 `
 
 class MainBoard extends Component {
@@ -90,10 +89,13 @@ class MainBoard extends Component {
                             <SummaryCard order={this.state.paymentsSummary}> Payments </SummaryCard>
                         </div>
                     </DailyDiv>
+                </Container>
+                <Container style={{fontSize: "36px", lineHeight: "48px"}}>
+                    Payments
+                </Container>
                     <PaymentDiv>
                         <PaymentCard />
                     </PaymentDiv>
-                </Container>
             </ConDiv>
         )
     }
