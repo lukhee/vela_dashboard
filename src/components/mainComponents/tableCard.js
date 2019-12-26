@@ -275,14 +275,13 @@ const TablePage = (props) => {
         ]
     };
 
-    let rowCount = props.rowCount || 10
+    let rowCount = props.rowCount
     let rows = data_panel.rows.filter((item, index) => {
         if (index < rowCount) return true
         return false
     })
     const changeLength = (event) => {
         const len = event.target.value
-        console.log('lenght: ', len)
         props.rowChange(len)
     }
 
@@ -291,7 +290,7 @@ const TablePage = (props) => {
         <ConDiv>
             <MDBCardHeader className=" d-flex justify-content-between align-items-center py-3 px-0 border-bottom-0" style={{ fontFamily: "Segoe UI !important", fontSize: "13px", lineHeight: "17px", textAlign: "left" }}>
                 <div style={{ width: "30%" }}>
-                    Showing <select style={{ background: "rgb(247, 247, 247)" }} className="mx-2 text-primary border-0 bg-none" onChange={changeLength} value={rowCount}>
+                    Showing <select style={{ background: "rgb(247, 247, 247)" }} className="mx-2 text-primary border-0 bg-none" onChange={changeLength} value={rowCount}> 
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="50">50</option>

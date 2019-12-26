@@ -57,9 +57,20 @@ class MainBoard extends Component {
             "Un-nreconcilled Payments": 20,
             "Recondcilled Payment": 80,
             "Total Payments": 100
+        },
+        TableDataInfo: {
+            rowCount: 10
         }
+    };
+
+    changeTableLength = (len) => {
+        let TableDataInfo = { ...this.state.TableDataInfo}
+        TableDataInfo.rowCount = len
+        this.setState({ TableDataInfo })
     }
+
     render() {
+        console.log("setstate", this.state)
         let DailyRecord = this.state.dailyReportData.daily.map((ele, index) => {
             return (
                 <DailyReport key={ele.id}
@@ -94,7 +105,9 @@ class MainBoard extends Component {
                     Payments
                 </Container>
                     <PaymentDiv>
-                        <PaymentCard />
+                    <PaymentCard 
+                        rowCount={this.state.TableDataInfo.rowCount} 
+                        rowChange={this.changeTableLength}/>
                     </PaymentDiv>
             </ConDiv>
         )
