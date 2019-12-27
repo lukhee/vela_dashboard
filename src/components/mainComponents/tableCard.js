@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { InputGroup, FormControl, Container } from 'react-bootstrap'
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBTable, MDBTableBody, MDBTableHead, MDBPagination, MDBPageItem, MDBPageNav, } from 'mdbreact';
 
 const ConDiv = styled.div`
     background: #f8f8fa;
@@ -280,6 +280,7 @@ const TablePage = (props) => {
         if (index < rowCount) return true
         return false
     })
+    console.log(rows.length)
     const changeLength = (event) => {
         const len = event.target.value
         props.rowChange(len)
@@ -302,7 +303,7 @@ const TablePage = (props) => {
                         <InputGroup.Prepend style={{ color: "#787878", fontSize: "11px" }}>
                             <InputGroup.Text id="inputGroup-sizing-sm" style={{ border: "none", borderBottom: "0.5px solid #787878", borderRadius: "0px", background: "#f7f7f7" }}><i className="fa fa-search" aria-hidden="true"></i></InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl style={{ border: "none", borderBottom: "1px solid grey", borderRadius: "0px", background: "#f7f7f7" }} aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="search ..." />
+                        <FormControl style={{ border: "none", borderBottom: "1px solid grey", borderRadius: "0px", background: "#f7f7f7" }} aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search payments ..." />
                     </InputGroup>
                 </div>
                 <div style={{ width: "30%", paddingLeft: "40px" }}>
@@ -324,7 +325,31 @@ const TablePage = (props) => {
                         </MDBTable>
                     </MDBCardBody>
                 </MDBCard>
-                <div className="d-flex justify-content-between align-items-end p-2"> <div>page number</div> <div> Pagination </div></div>
+                <div style={{ fontSize: "13px", lineHeight: "17px" }} className="d-flex justify-content-between align-items-end p-2"> <div style={{lineHeight: "35px"}}>Showing 1 to {rows.length} of {data_panel.rows.length} entries</div> <div>
+                    <MDBPagination className="mb-0">
+                        <MDBPageItem disabled>
+                            <MDBPageNav aria-label="Previous">
+                                <span aria-hidden="true">Previous</span>
+                            </MDBPageNav>
+                        </MDBPageItem>
+                        <MDBPageItem active>
+                            <MDBPageNav>
+                                1 <span className="sr-only">(current)</span>
+                            </MDBPageNav>
+                        </MDBPageItem>
+                        <MDBPageItem>
+                            <MDBPageNav>2</MDBPageNav>
+                        </MDBPageItem>
+                        <MDBPageItem>
+                            <MDBPageNav>3</MDBPageNav>
+                        </MDBPageItem>
+                        <MDBPageItem>
+                            <MDBPageNav aria-label="Previous">
+                                <span aria-hidden="true">Next</span>
+                            </MDBPageNav>
+                        </MDBPageItem>
+                    </MDBPagination> 
+                </div></div>
             </Container>
         </ConDiv>
     );
