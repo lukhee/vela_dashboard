@@ -59,18 +59,22 @@ class MainBoard extends Component {
             "Total Payments": 100
         },
         TableDataInfo: {
-            rowCount: 10
+            rowCount: 10,
+            rowStatus: "all"
         }
     };
 
     changeTableLength = (len) => {
-        let TableDataInfo = { ...this.state.TableDataInfo}
-        TableDataInfo.rowCount = len
-        this.setState({ TableDataInfo })
+        let TableDataInfo = { ...this.state.TableDataInfo }
+        if (!isNaN(len)) {
+            TableDataInfo.rowCount = len
+           return this.setState({ TableDataInfo })
+        }
+        TableDataInfo.rowStatus = len
+        return this.setState({ TableDataInfo })
     }
 
     render() {
-        console.log("setstate", this.state)
         let DailyRecord = this.state.dailyReportData.daily.map((ele, index) => {
             return (
                 <DailyReport key={ele.id}
@@ -80,7 +84,7 @@ class MainBoard extends Component {
         })
         return (
             <ConDiv>
-                <Container>
+                <Container className="px-3">
                     <div style={{display: "flex", justifyContent: "space-between"}}>
                         <div style={{ marginTop: "30px", width: "50%", display: "flex", justifyContent: "flex-start" }}>
                             {DailyRecord}
@@ -89,7 +93,7 @@ class MainBoard extends Component {
                             {DailyRecord}
                         </div>
                     </div>
-                    <DailyDiv style={{ marginTop: "10px" }}>
+                    <DailyDiv className="mt-4">
                         <GraphCard />
                         <div style={{
                             width: "39%",
@@ -101,12 +105,13 @@ class MainBoard extends Component {
                         </div>
                     </DailyDiv>
                 </Container>
-                <Container style={{fontSize: "36px", lineHeight: "48px"}}>
+                <Container className="px-4" style={{fontSize: "36px", lineHeight: "48px"}}>
                     Payments
-                </Container>
+                </Container >
                     <PaymentDiv>
                     <PaymentCard 
-                        rowCount={this.state.TableDataInfo.rowCount} 
+                        rowCount={this.state.TableDataInfo.rowCount}
+                        rowStatus={this.state.TableDataInfo.rowStatus}
                         rowChange={this.changeTableLength}/>
                     </PaymentDiv>
             </ConDiv>

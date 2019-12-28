@@ -27,7 +27,7 @@ const ReportVAlue = styled.span`
 const reportCard = (props) => {
     return (
         <Card>
-            <div style={{ width: "60%" }}>
+            <div style={{ width: "65%" }}>
                 <p style={{ fontSize: "12px", color: "#787C90" }}>{props.reportHeading}</p>
                 <ReportVAlue>{props.reportValue}</ReportVAlue>
             </div>

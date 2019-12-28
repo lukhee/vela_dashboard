@@ -57,10 +57,11 @@ tbody{
 table, td{
   border:none !important;
   border-bottom: 1px solid #CCCFD4 !important;
-  padding: 25px 15px !important;
+  padding: 20px 15px !important;
   font-family: 'Segoe UI' !important;
   font-style: regular;
   font-size: 14px;
+  line-height: 25px;;
 }
 
 th{
@@ -75,6 +76,10 @@ thead{
   border:none !important;
   background-color: #EAEEF0 !important;
   color: #7F8FA4 !important;
+}
+
+table{
+  margin-bottom: 0px !important
 }
 
 .pagination{

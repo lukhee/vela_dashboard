@@ -29,7 +29,7 @@ const aStyle ={
 const sideBarComponent = () => {
     return (
         <MainDiv>
-            <Button style={{ borderRadius: '20px', fontSize: "12px", fontWeight: "bold", marginBottom: '10px', marginLeft: "30px" }} variant="success">GENERATE INVOICE</Button>
+            <Button style={{ borderRadius: '20px', fontSize: "12px", fontWeight: "bold", marginBottom: '10px', marginLeft: "30px", padding: "7px 20px" }} variant="success">GENERATE INVOICE</Button>
             <div className="list-unstyled">
                 <div>
                     <ul className="list-unstyled sidebarLink">

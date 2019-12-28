@@ -32,8 +32,8 @@ const Logo = {
 
 const header = (props) => {
     return (
-        <Row style={{ padding: "10px", border: "1px solid:silver", boxShadow: "0px 4px 10px rgba(79, 79, 79, 0.07)", zIndex: "200", background: "white", position: "fixed", top: "0", right: "0", left: "0" }}>
-            <Col sm={2}>
+        <Row style={{ padding: "10px", boxShadow: "0px 4px 10px rgba(79, 79, 79, 0.07)", zIndex: "200", background: "white", position: "fixed", top: "0", right: "0", left: "0" }}>
+            <Col sm={2} className="pl-5">
                 <span style={Logo}> TransMonitor</span>
             </Col>
             <Col sm={10} style={{ lineHeight: "40px" }}>

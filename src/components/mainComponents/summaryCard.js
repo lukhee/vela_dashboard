@@ -15,7 +15,7 @@ const summaryCard = (props) => {
     const orderKeys = Object.keys(order)
     let title = orderKeys.map((key, index) => {
         return (
-            <div style={{ fontSize: "14px" }} key={index}> {key} : {order[key]} </div>
+            <div style={{ fontSize: "14px" }} key={index}> {key} : <span style={{ color: index === 0 ? "#ffc107" : index === 1 ? "#27AE60" : "#1875F0"}}> {order[key]} </span> </div>
         )
     })
     return (
