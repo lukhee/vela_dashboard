@@ -915,7 +915,7 @@ const TablePage = (props) => {
     } else if(rowStatus !== "all"){
         rows = data_panel.rows.filter(item =>{
             let items = item.status.props.children[0].props.children[2]
-            return "Reconcilled" === items
+            return rowStatus.toLowerCase() === items.trim().toLowerCase()
         })
     } else {
         changeFuncState()
@@ -966,6 +966,7 @@ const TablePage = (props) => {
                         <option value="Un-Reconcilled">Un-Reconcilled</option>
                         <option value="Settled">Settled</option>
                         <option value="Un-Settled">Un-Settled</option>
+                        <option value="Pending">Pending</option>
                     </select>
                 </div>
             </MDBCardHeader>

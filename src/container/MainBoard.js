@@ -86,10 +86,10 @@ class MainBoard extends Component {
             <ConDiv>
                 <Container className="px-3">
                     <div style={{display: "flex", justifyContent: "space-between"}}>
-                        <div style={{ marginTop: "30px", width: "50%", display: "flex", justifyContent: "flex-start" }}>
+                        <div style={{ marginTop: "30px", width: "47%", display: "flex", justifyContent: "space-between" }}>
                             {DailyRecord}
                         </div>
-                        <div style={{ marginTop: "30px", width: "50%", display: "flex", justifyContent: "flex-end" }}>
+                        <div style={{ marginTop: "30px", width: "47%", display: "flex", justifyContent: "space-between" }}>
                             {DailyRecord}
                         </div>
                     </div>
